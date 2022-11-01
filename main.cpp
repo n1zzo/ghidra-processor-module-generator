@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
             ("input-file,i", boost::program_options::value<string>(&parsedData.inputFilename), "Path to a newline delimited text file containing all opcodes and instructions for the processor module. Required.")
             ("processor-name,n",boost::program_options::value<string>(&parsedData.processorName)->default_value("MyProc"), "Name of the target processor. Defaults to \"MyProc\" if not specified")
             ("processor-family,f",boost::program_options::value<string>(&parsedData.processorFamily)->default_value("MyProcFamily"), "Name of the target processor's family. Defaults to \"MyProcFamily\" if not specified")
-            ("endian,e", boost::program_options::value<string>(&parsedData.endian)->default_value("big"), "Endianness of the processor. Must be either \"big\" or \"small\". Defaults to big if not specified")
+            ("endian,e", boost::program_options::value<string>(&parsedData.endian)->default_value("big"), "Endianness of the processor. Must be either \"big\" or \"little\". Defaults to big if not specified")
             ("alignment,a", boost::program_options::value<unsigned int>(&parsedData.alignment)->default_value(1), "Instruction alignment of the processor. Defaults to 1 if not specified")
             ("bitness,b", boost::program_options::value<unsigned int>(&parsedData.bitness)->default_value(32), "Bitness of the processor. Defaults to 32 if not specified")
             ("print-registers-only", boost::program_options::bool_switch(&printRegistersOnly), "Only print parsed registers. Useful for debugging purposes. False by default")
@@ -65,9 +65,9 @@ int main(int argc, char *argv[])
             return -1;
         }
 
-        if(parsedData.endian != "big" && parsedData.endian != "small")
+        if(parsedData.endian != "big" && parsedData.endian != "little")
         {
-            cout << "Processor endianness must be either big or small!!" << endl;
+            cout << "Processor endianness must be either big or little!!" << endl;
             return -1;
         }
     }

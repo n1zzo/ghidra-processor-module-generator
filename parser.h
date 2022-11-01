@@ -65,7 +65,7 @@ typedef struct _PARSED_DATA
     // path to the input assembly file. Not needed again after initial parsing
     string inputFilename;
 
-    // endianess or the instruction set. Can be either "big" or "small". Needed in the output files
+    // endianess or the instruction set. Can be either "big" or "little". Needed in the output files
     string endian;
 
     // name of the processor
