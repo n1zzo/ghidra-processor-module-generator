@@ -129,6 +129,7 @@ int parseInstructions(PARSED_DATA& parsedData)
         boost::replace_all(line, "+", " + ");
         boost::replace_all(line, "-", " - ");
         boost::replace_all(line, "#", " # ");
+        boost::replace_all(line, ":", " : ");
         boost::trim(line);
 
         // split the line into components
