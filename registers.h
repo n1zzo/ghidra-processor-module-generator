@@ -176,7 +176,6 @@ const char* ALL_REGISTERS[] = {
     "bndcfgu",
     "bndstatus",
     "bp",
-    "bpl",
     "branchcond",
     "branchexecuted",
     "branchinddest",
